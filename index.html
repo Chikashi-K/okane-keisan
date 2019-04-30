@@ -5,151 +5,37 @@
 	<meta charset="UTF-8">
 	<title>okane-keisan</title>
 	<link rel="stylesheet" type="text/css" href="common.css">
-	<link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="common.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet"> 
 </head>
 
-  <script type="text/javascript">
-  function Calculate(){
-  	//入力値の数値変換
-  		var chikainp = parseInt(input1.otto.value);
-  		var sakiinp = parseInt(input1.tsuma.value);
-
-  	//必要なお金の内訳
-  		//じぶん銀行
-  		var kyoueki = 26500;
-  		//本店
-  		var loan = 112000;
-  		var hoiku = 86300;
-  		//大伝馬町
-  		var tsumitate = 80000;
-  		//現金
-  		var kyouyu = 50000;
-  		//家事手当
-  		var teate = 20000;
-
-  	 //支払金額種類
-  	 	var ChikaJibun = 0;
-  	 	var ChikaOdenma = 0;
-  	 	var ChikaGenkin = 0;
-  	 	var ChikaHonten = 0;
-  	 	var SakiHonten = 0;
-  	 	var SakiOdenma = 0;
-  	 	var SakiJibun = 0;
-  	 	var SakiGenkin = 0;
-
-  	//計算用の変数
-		var hontensum = loan + hoiku;
-  		var sum = kyoueki + hontensum + tsumitate + kyouyu;
-
-  	//割合の計算
-   		var chikaPay = (chikainp/(sakiinp+chikainp));
-  		var sakiPay = (sakiinp/(sakiinp+chikainp));
-
-  		//表示用
-  		var viewchikaPay = Math.ceil(chikainp/(sakiinp+chikainp)*100);
-  		var viewsakiPay = 100 - viewchikaPay;
-
-  	//支払う合計の計算
-  		var chikaPaySum = teate + Math.ceil(chikaPay*sum*0.01) * 100;
-  		var sakiPaySum = sum - chikaPaySum;
-
-  	//どの口座にどれだけ支払うか計算
-  		var chikaPayNokori = chikaPaySum - hontensum;
-
-  		if (chikaPayNokori > 0){
-  			ChikaHonten = hontensum;
-  			//本店分を差し引いて残っているなら、大伝馬町にお金を入れる
-  				if (chikaPayNokori >= tsumitate){
-  					chikaPayNokori = chikaPayNokori - tsumitate;
-  					ChikaOdenma = tsumitate;
-
- 					//大伝馬町を差し引いて残っているならじぶん銀行にお金を入れると共に、現金金額も確定する
-  					if (chikaPayNokori >= kyoueki){
-  						chikaPayNokori = chikaPayNokori - kyoueki;
-  						ChikaJibun = kyoueki;
-  						ChikaGenkin = chikaPayNokori;
-  						SakiGenkin = kyouyu - ChikaGenkin;
-  					} else {
-  						//じぶん銀行に入金してお金が尽きたので、振込金額が確定する
-  						ChikaJibun = chikaPayNokori;
-  						SakiJibun = kyoueki - ChikaJibun;
-  						SakiGenkin = kyouyu;
-  					}
-  				} else {
-  					//大伝馬町に入金してお金が尽きるので金額が確定する
-  					ChikaOdenma = chikaPayNokori;
-  					SakiGenkin = kyouyu;
-  					SakiJibun = kyoueki;
-  					SakiOdenma = tsumitate - chikaPayNokori;
-  				}
-  		} else {
-  		//本店にさきちゃんから補填してもらう
-  			SakiGenkin = kyouyu;
-  			SakiJibun = kyoueki;
-  			SakiOdenma = tsumitate;
-  			SakiHonten = sakiPaySum - SakiGenkin - SakiJibun - SakiOdenma;
-  			ChikaHonten = hontensum - SakiHonten;
-  		}
-
-  		c_rate.innerHTML =viewchikaPay;
-  		s_rate.innerHTML =viewsakiPay;
-
-  		c_pay.innerHTML = chikaPaySum;
-  		s_pay.innerHTML = sakiPaySum;
-
-		c_honten.innerHTML = ChikaHonten;
-		s_honten.innerHTML = SakiHonten;
-
-		c_odenma.innerHTML = ChikaOdenma;
-		s_odenma.innerHTML = SakiOdenma;
-
-		c_jibun.innerHTML = ChikaJibun;
-		s_jibun.innerHTML = SakiJibun;
-
-		c_cash.innerHTML = ChikaGenkin;
-		s_cash.innerHTML = SakiGenkin;  		
-  }
-
-
-$('input').on('focusin', function() {
-  $(this).parent().find('label').addClass('active');
-});
-
-$('input').on('focusout', function() {
-  if (!this.value) {
-    $(this).parent().find('label').removeClass('active');
-  }
-});
-
- </script>
-
 <body>
+<h1>proportion calculate</h1>
 
 <form name="input1">
-	<div class="cp_iptxt">
-	<input class="ef" type="text" placeholder="" name="otto">
-	<label>ち</label>
-	<span class="focus_line"><i></i></span>
-	</div>
-		<br>
-	<div class="cp_iptxt">
-	<input class="ef" type="text" placeholder="" name="tsuma">
-	<label>さ</label>
-	<span class="focus_line"><i></i></span>
-	</div>
-		<br>
+    <div class="form_des">
+    <label>Chikashi：</label>
+	<input type="text" placeholder="450000" name="otto">
+    </div>
+
+    <div class="form_des">
+    <label>Saki：</label>
+	<input type="text" placeholder="300000" name="tsuma">
+    </div>
 </form>
+
 	<div class="btn">
-	<a href="#" onClick="Calculate()" class="btn-gradation">計算</a>
+	<a href="#" onClick="Calculate();scrollDown()" class="btn-gradation">calculate!</a>
 	</div>
 
 
-<table id="table05" class="tbl">
+<h2>Summary</h2>
+<table id="table01" class="tbl">
 	<thead>
 		<tr>
 			<th></th>
-			<th>ち</th>
-			<th>さ</th>
+			<th class="name">Chikashi</th>
+			<th class="name">Saki</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -159,11 +45,23 @@ $('input').on('focusout', function() {
 			<td><span id="s_rate"></span></td>
 		</tr>
 		<tr>
-			<th>支払い金額</th>
+			<th>支払い合計</th>
 			<td><span id="c_pay"></span></td>
 			<td><span id="s_pay"></span></td>
 		</tr>
+	</tbody>
+</table>
 
+<h2>Breakdown</h2>
+<table id="table02" class="tbl">
+	<thead>
+		<tr>
+			<th></th>
+			<th class="name">Chikashi</th>
+			<th class="name">Saki</th>
+		</tr>
+	</thead>
+	<tbody>
 		<tr>
 			<th>UFJ本店</th>
 			<td><span id="c_honten"></span></td>
@@ -186,6 +84,8 @@ $('input').on('focusout', function() {
 		</tr>
 	</tbody>
 </table>
+
+
 
 </body>
 

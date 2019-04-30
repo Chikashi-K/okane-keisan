@@ -1,116 +1,62 @@
 body {
-  font-family: font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  font-family: 'Ubuntu',apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  color :#333333;
+} 
+
+
+h1{
+	text-align: center;
+	margin : 20px auto;
+	font-size: 30px;
+	font-weight: normal;
 }
+
+h2{
+	text-align: center;
+	margin : 80px auto 30px auto;
+	font-size: 20px;
+	font-weight: normal;
+}
+
 
 form{
 	margin-top: 30px;
 }
 
-
-.cp_iptxt {
-	position: relative;
-	width: auto;
-	margin: 5px auto;
+label{
+	font-size: 12px;
+	margin-bottom: 0px;
 }
 
-.cp_iptxt input[type='text'] {
-	font: 15px/24px sans-serif;
+.form_des {
+	position: relative;
+	width: 100%;
+	max-width: 250px; /* レスポンシブの場合の対策 */
+    box-sizing: border-box; /* [borde-box]で右の飛び出しを回避 */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	margin: 0 auto;
+}
+
+.form_des input[type=text] {
+	font: 15px/24px 'Ubuntu',sans-serif;
 	box-sizing: border-box;
 	width: 100%;
-	letter-spacing: 1px;
-	padding-left: 4em;
-}
-.cp_iptxt input[type='text']:focus {
+	margin: 0 0 20px 0;
+	padding: 0.3em;
+	transition: 0.3s;
+	border: 1px solid #333333;
+	border-radius: 4px;
 	outline: none;
 }
-.ef {
-	padding: 7px 14px;
-	transition: 0.4s;
-	border: 1px solid #808080;
-	background: transparent;
-}
-.ef ~ .focus_line:before,
-.ef ~ .focus_line:after {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 0;
-	height: 2px;
-	content: '';
-	transition: 0.2s;
-	transition-delay: 0.2s;
-	background-color: #24FE41;
-}
-.ef ~ .focus_line:after {
-	top: auto;
-	right: auto;
-	bottom: 0;
-	left: 0;
-	transition-delay: 0.6s;
-}
-.ef ~ .focus_line i:before,
-.ef ~ .focus_line i:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 2px;
-	height: 0;
-	content: '';
-	transition: 0.2s;
-	background-color: #24FE41;
-}
-.ef ~ .focus_line i:after {
-	top: auto;
-	right: 0;
-	bottom: 0;
-	left: auto;
-	transition-delay: 0.4s;
-}
-.ef:focus ~ .focus_line:before,
-.ef:focus ~ .focus_line:after,
-.cp_iptxt.ef ~ .focus_line:before,
-.cp_iptxt.ef ~ .focus_line:after {
-	width: 100%;
-	transition: 0.2s;
-	transition-delay: 0.6s;
-}
-.ef:focus ~ .focus_line:after,
-.cp_iptxt.ef ~ .focus_line:after {
-	transition-delay: 0.2s;
-}
-.ef:focus ~ .focus_line i:before,
-.ef:focus ~ .focus_line i:after,
-.cp_iptxt.ef ~ .focus_line i:before,
-.cp_iptxt.ef ~ .focus_line i:after {
-	height: 100%;
-	transition: 0.2s;
-}
-.ef:focus ~ .focus_line i:after,
-.cp_iptxt.ef ~ .focus_line i:after {
-	transition-delay: 0.4s;
-}
-.ef ~ label {
-	position: absolute;
-	z-index: -1;
-	top: 10px;
-	left: 14px;
-	width: 100%;
-	transition: 0.3s;
-	letter-spacing: 0.5px;
-	color: #aaaaaa;
-}
-.ef:focus ~ label, .cp_iptxt.ef ~ label {
-	font-size: px;
-	top: -18px;
-	left: 0;
-	transition: 0.3s;
-	color: #24FE41;
+.form_des input[type=text]:focus {
+	border-color: #5DAC81;
 }
 
 
 .btn{
 	text-align: center;
-	margin-bottom: 50px;
+	margin: 20px 0 50px 0;
 }
 
 .btn-gradation {
@@ -122,37 +68,52 @@ form{
   text-decoration: none;
   padding: 12px 24px;
   border-radius: 10px;
-  background-image: linear-gradient(-90deg, #FDFC47, #24FE41);
+  background-color: #5DAC81;
   transition: .5s;
   background-size: 200%;
 }
 
 .btn-gradation:hover {
-  background-position: right center;
+  background-color: #2a6846;
 }
 
 
 .tbl{
-	margin:10px auto;
+	margin:5px auto 5px auto;
 }
 
 table{
-	margin-top: 50px;
+	margin: 5px 0 5px 0;
+	font-size: 12px;
 }
 
-#table05 th,#table05 td {
-  padding: 15px;
-  border: solid 1px #987777;
+th{
+	padding: 5px 15px;
+	font-weight: normal;
 }
-#table05 thead th {
-  background: #D19B9B;
-  color: #fff;
+
+td {
+	padding: 2px 15px;
+	min-width: 80px;
+	text-align: right;
+ }
+
+thead th.name {
+  color: #FFFFFF;
+  border-bottom: solid 1px #5DAC81;
+  background: #5e7c6c;
 }
-#table05 tbody th {
-  background: #FFF0F0;
-  color: #AA5A5A;
-  font-weight: 400;
+
+tbody th {
+   color: #333333;
 }
-#table05 tbody td {
-  background: #FBFBFB;
+
+tbody td {
+   border-bottom: solid 1px #5DAC81;
 }
+
+#table02{
+	margin-bottom: 100px;
+}
+
+
