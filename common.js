@@ -3,7 +3,7 @@ function Calculate(){
   		var chikainp = parseInt(input1.otto.value);
   		var sakiinp = parseInt(input1.tsuma.value);
 
-  	//必要なお金の内訳
+  	//お金の内訳
   		//じぶん銀行
   		var kyoueki = parseInt(26500);
   		//本店
@@ -72,7 +72,7 @@ function Calculate(){
   					SakiOdenma = tsumitate - chikaPayNokori;
   				}
   		} else {
-  		//本店にさきちゃんから補填してもらう
+  		//本店に補填してもらう
   			SakiGenkin = kyouyu;
   			SakiJibun = kyoueki;
   			SakiOdenma = tsumitate;

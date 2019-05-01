@@ -3,119 +3,120 @@ body {
   color :#333333;
 } 
 
-
 h1{
-	text-align: center;
-	margin : 20px auto;
-	font-size: 30px;
-	font-weight: normal;
+	text-align         : center;
+	margin             : 20px auto;
+	font-size          : 30px;
+	font-weight        : normal;
 }
 
 h2{
-	text-align: center;
-	margin : 80px auto 30px auto;
-	font-size: 20px;
-	font-weight: normal;
+	text-align         : center;
+	margin             : 80px auto 30px auto;
+	font-size          : 20px;
+	font-weight        : normal;
 }
 
-
+/* フォーム周りの設定 */
 form{
-	margin-top: 30px;
+	margin-top         : 30px;
 }
 
 label{
-	font-size: 12px;
-	margin-bottom: 0px;
+	font-size          : 12px;
+	margin-bottom      : 0px;
 }
 
 .form_des {
-	position: relative;
-	width: 100%;
-	max-width: 250px; /* レスポンシブの場合の対策 */
-    box-sizing: border-box; /* [borde-box]で右の飛び出しを回避 */
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-	margin: 0 auto;
+	position           : relative;
+	width              : 100%;
+	max-width          : 250px; /* レスポンシブの場合の対策 */
+    box-sizing         : border-box; /* [borde-box]で右の飛び出しを回避 */
+    -webkit-box-sizing : border-box;
+    -moz-box-sizing    : border-box;
+	margin             : 0 auto;
 }
 
 .form_des input[type=tel] {
-	font: 15px/24px 'Ubuntu',sans-serif;
-	box-sizing: border-box;
-	width: 100%;
-	margin: 0 0 20px 0;
-	padding: 0.3em;
-	transition: 0.3s;
-	border: 1px solid #333333;
-	border-radius: 4px;
-	outline: none;
+	font               : 15px/24px 'Ubuntu',sans-serif;
+	box-sizing         : border-box;
+	width              : 100%;
+	margin             : 0 0 20px 0;
+	padding            : 0.3em;
+	transition         : 0.3s;
+	border             : 1px solid #333333;
+	border-radius      : 4px;
+	outline            : none;
 }
+
 .form_des input[type=tel]:focus {
-	border-color: #5DAC81;
+	border-color       : #5DAC81;
 }
 
 
+/* ボタン設定 */
 .btn{
-	text-align: center;
-	margin: 20px 0 50px 0;
+	text-align         : center;
+	margin             : 20px 0 50px 0;
 }
 
 .btn-gradation {
-  display: inline-block;
-  width: 180px;
-  text-align: center;
-  font-size: 16px;
-  color: #FFF;
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 10px;
-  background-color: #5DAC81;
-  transition: .5s;
-  background-size: 200%;
+  display              : inline-block;
+  width                : 180px;
+  text-align           : center;
+  font-size            : 16px;
+  color                : #FFFFFF;
+  text-decoration      : none;
+  padding              : 12px 24px;
+  border-radius        : 10px;
+  background-color     : #5DAC81;
+  transition           : 0.5s;
+  background-size      : 200%;
 }
 
 .btn-gradation:hover {
-  background-color: #2a6846;
+  background-color     : #2a6846;
 }
 
 
+/* テーブル設定 */
 .tbl{
-	margin:5px auto 5px auto;
+	margin             :5px auto 5px auto;
 }
 
 table{
-	margin: 5px 0 5px 0;
-	font-size: 12px;
+	margin             : 5px 0 5px 0;
+	font-size          : 12px;
 }
 
 th{
-	padding: 5px 15px;
-	font-weight: normal;
+	padding            : 5px 15px;
+	font-weight        : normal;
 }
 
 td {
-	padding: 2px 15px;
-	min-width: 80px;
-	text-align: right;
+	padding            : 2px 15px;
+	min-width          : 80px;
+	text-align         : right;
  }
 
 thead th.name {
-  color: #FFFFFF;
-  background: #5e7c6c;
+  color                : #FFFFFF;
+  background           : #5e7c6c;
 }
 
 tbody th {
-   color: #333333;
+   color               : #333333;
 }
 
 tbody td {
-   border-bottom: solid 1px #5DAC81;
+   border-bottom       : solid 1px #5DAC81;
 }
 
 #table02{
-	margin-bottom: 60px;
+	margin-bottom      : 60px;
 }
 
-
 #c_teate{
-	color: #FF0000;
+	color              : #FF0000;
 }
