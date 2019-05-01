@@ -5,14 +5,14 @@ function Calculate(){
 
   	//必要なお金の内訳
   		//じぶん銀行
-  		var kyoueki = 26500;
+  		var kyoueki = parseInt(26500);
   		//本店
-  		var loan = 112000;
-  		var hoiku = 86300;
+  		var loan = parseInt(112000);
+  		var hoiku = parseInt(86300);
   		//大伝馬町
-  		var tsumitate = 80000;
+  		var tsumitate = parseInt(80000);
   		//現金
-  		var kyouyu = 50000;
+  		var kyouyu = parseInt(50000);
   		//家事手当
   		var teate = 20000;
 
@@ -98,6 +98,12 @@ function Calculate(){
 
 		c_cash.innerHTML = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(ChikaGenkin);
 		s_cash.innerHTML = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(SakiGenkin);  		
+
+    c_income.innerHTML = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(chikainp);
+    s_income.innerHTML = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(sakiinp);
+    c_teate.innerHTML = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(-20000);
+    s_teate.innerHTML = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(20000);
+
 }
 
 
