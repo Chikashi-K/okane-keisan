@@ -38,7 +38,7 @@ label{
 	margin: 0 auto;
 }
 
-.form_des input[type=text] {
+.form_des input[type=tel] {
 	font: 15px/24px 'Ubuntu',sans-serif;
 	box-sizing: border-box;
 	width: 100%;
@@ -49,7 +49,7 @@ label{
 	border-radius: 4px;
 	outline: none;
 }
-.form_des input[type=text]:focus {
+.form_des input[type=tel]:focus {
 	border-color: #5DAC81;
 }
 
